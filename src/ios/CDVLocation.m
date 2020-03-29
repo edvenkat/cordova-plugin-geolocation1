@@ -152,6 +152,10 @@
     }
     */
 #endif
+ 
+  if (@available(iOS 11.0, *)) {
+            self.locationManager.showsBackgroundLocationIndicator = YES;
+        } 
 
     // Tell the location manager to start notifying us of location updates. We
     // first stop, and then start the updating to ensure we get at least one
@@ -171,9 +175,7 @@
         self.locationManager.distanceFilter = 10;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     }
-   if (@available(iOS 11.0, *)) {
-            self.locationManager.showsBackgroundLocationIndicator = YES;
-        } 
+  
 }
 
 - (void)_stopLocation
