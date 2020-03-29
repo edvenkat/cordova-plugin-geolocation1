@@ -171,6 +171,9 @@
         self.locationManager.distanceFilter = 10;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     }
+   if (@available(iOS 11.0, *)) {
+            self.locationManager.showsBackgroundLocationIndicator = YES;
+        } 
 }
 
 - (void)_stopLocation
