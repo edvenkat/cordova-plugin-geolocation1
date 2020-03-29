@@ -153,7 +153,7 @@
     */
 #endif
  
-  if ([self.locationManager respondsToSelector:@selector(setAllowsBackgroundLocationUpdates:)]) {
+  if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [self.locationManager setAllowsBackgroundLocationUpdates:YES];
     }
   if (@available(iOS 11.0, *)) {
