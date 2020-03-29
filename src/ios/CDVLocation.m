@@ -118,6 +118,10 @@
         return;
     }
 
+  if ([self.locationManager respondsToSelector:@selector(setAllowsBackgroundLocationUpdates:)]) {
+        [self.locationManager setAllowsBackgroundLocationUpdates:YES];
+    }
+ 
 #ifdef __IPHONE_8_0
     NSUInteger code = [CLLocationManager authorizationStatus];
     if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) { //iOS8+
@@ -153,11 +157,11 @@
     */
 #endif
  
-  if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+ // if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         //[self.locationManager setAllowsBackgroundLocationUpdates:YES];
     //self.locationManager.allowsBackgroundLocationUpdates = YES;
    
-    }
+   // }
   if (@available(iOS 11.0, *)) {
             self.locationManager.showsBackgroundLocationIndicator = YES;
         } 
