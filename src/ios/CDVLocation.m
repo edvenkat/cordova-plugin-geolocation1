@@ -155,7 +155,7 @@
  
   if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         //[self.locationManager setAllowsBackgroundLocationUpdates:YES];
-    self.locationManager.allowsBackgroundLocationUpdates = YES
+    self.locationManager.allowsBackgroundLocationUpdates = YES;
    
     }
   if (@available(iOS 11.0, *)) {
